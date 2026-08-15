@@ -54,9 +54,8 @@ export default function AdminFlightsPage() {
           !flightNumber.trim() || 
           !destination.trim() || 
           !status.trim() || 
-          !departureTime.trim() ||
-          !createdAt.trim()
-        ) return setError("Modelo y placa son requeridos");
+          !departureTime.trim()
+        ) return setError("Faltan campos requeridos");
 
       const payload = {
         gate: Number(gate),
@@ -138,7 +137,7 @@ export default function AdminFlightsPage() {
             <TextField label="Numero de Vuelo" value={flightNumber} onChange={(e) => setFlightNumber(e.target.value)} sx={{ width: 220 }} />
             <TextField label="Destino" value={destination} onChange={(e) => setDestination(e.target.value)} sx={{ width: 220 }} />
             <TextField label="Estado" value={status} onChange={(e) => setStatus(e.target.value)} sx={{ width: 220 }} />
-            <TextField label="Hora de Despegue" value={departureTime} onChange={(e) => setDepartureTime(e.target.value)} sx={{ width: 220 }} />    
+            <TextField label= "Despegue" value={departureTime} onChange={(e) => setDepartureTime(e.target.value)} sx={{ width: 220 }} />    
             <TextField label="Creada a las" value={createdAt} onChange={(e) => setCreatedAt(e.target.value)} sx={{ width: 220 }} />
 
             <Button variant="contained" onClick={save}>{editId ? "Actualizar" : "Crear"}</Button>
@@ -157,7 +156,7 @@ export default function AdminFlightsPage() {
               <TableCell>Numero de Vuelo</TableCell>
               <TableCell>Destino</TableCell>
               <TableCell>Status</TableCell>
-              <TableCell>Hora de Despegue</TableCell>
+              <TableCell>Despegue</TableCell>
               <TableCell>Fecha de Creacion</TableCell>
             </TableRow>
           </TableHead>
